@@ -1,8 +1,7 @@
 var Beer = {
 	
-	curr: 99,	//current number of bottles
 	verse: function (num) {
-		curr = num-1;
+		var curr = num-1;		//current number of bottles
 		var str='';
 		switch(num) {
 			case 2:
@@ -20,12 +19,11 @@ var Beer = {
 		return str;
 	},
 	sing: function(from, to) {
-		var from = from;
 		var to = to || 0;
 		var song='';
 		for (var i=from; i>=to; i--) {
-			song+=Beer.verse(i);
-			if (i>to) {song+='\n';}
+			song += Beer.verse(i);
+			if (i>to) {song += '\n';}
 		}
 		return song;
 	}
