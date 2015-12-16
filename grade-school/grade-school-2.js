@@ -28,3 +28,71 @@ var School = (function() {
 		grade: grade
 	}
 })();
+
+
+
+
+
+
+
+
+???????
+function School() {
+    this.schoolRoster = {};
+}
+
+School.prototype = {
+    roster: function() {
+        return this.schoolRoster;
+    },
+    add: function(name, grade) {
+        this.schoolRoster[grade] ? this.schoolRoster[grade].push(name) : this.schoolRoster[grade] = [name];
+        this.schoolRoster[grade] = this.schoolRoster[grade].sort(function(a,b){ return a>b });
+    },
+    grade: function(grade) {
+        return this.schoolRoster[grade] ? this.schoolRoster[grade] : [];
+    }
+}
+
+
+module.exports = School;
+
+
+
+
+
+
+
+
+
+
+???????????
+module.exports = function School() {
+  var roster = {};
+
+  function getRoster() {
+    return roster;
+  }
+
+  function getGrade(grade) {
+    if (roster.hasOwnProperty(grade)) {
+      return roster[grade];
+    }
+    return [];
+  }
+
+  function addToRoster(name, grade) {
+    if (roster.hasOwnProperty(grade)) {
+      roster[grade].push(name);
+      roster[grade] = roster[grade].sort();
+    } else {
+      roster[grade] = [name];
+    }
+  }
+
+  return {
+    add: addToRoster,
+    roster: getRoster,
+    grade: getGrade
+  };
+};
