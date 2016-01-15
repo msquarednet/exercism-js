@@ -1,5 +1,7 @@
 function MyClass () { // constructor function
   var privateVariable = "foo";  // Private variable 
+  
+  function privateFunction = () {}  // Private function
 
   this.publicVariable = "bar";  // Public variable 
 
