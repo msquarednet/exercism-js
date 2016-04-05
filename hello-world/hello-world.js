@@ -1,16 +1,12 @@
-//
-// This is only a SKELETON file for the 'Hello World' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-// Make sure to look at test.script.js--that should give you some hints about what is
-// expected here.
+'use strict';
 
-var HelloWorld = function() {};
+class HelloWorld {
+    hello(input) {
 
-HelloWorld.prototype.hello = function(input) {
+        const name = input || 'World';
+        return `Hello, ${name}!`;
 
-	var name = input || 'World';
-	return 'Hello, ' + name + '!';
+    }
+}
 
-};
-
-module.exports = HelloWorld;
+export default HelloWorld;
