@@ -3,6 +3,7 @@ function Triangle(side1,side2,side3) {
   this.side2 = side2 || 0;
   this.side3 = side3 || 0;
   this.sides = [this.side1, this.side2, this.side3].sort(function(a,b){return a-b});
+  console.log('this sides...', this.sides)
 }
 
 Triangle.prototype.kind = function() {
